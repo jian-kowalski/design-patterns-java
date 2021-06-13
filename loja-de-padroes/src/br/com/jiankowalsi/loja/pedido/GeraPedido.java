@@ -26,7 +26,6 @@ public class GeraPedido {
     public void executa() {
         var orcamento = new Orcamento(this.valorOrcamento, this.quantidadeItens);
         var pedido = new Pedido(this.cliente, LocalDateTime.now(), orcamento);
-
         acoes.forEach(acao -> acao.executarAcao(pedido));
     }
 

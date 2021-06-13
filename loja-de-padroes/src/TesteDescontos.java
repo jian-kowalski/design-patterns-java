@@ -8,7 +8,6 @@ public class TesteDescontos {
         var orcamentoItens = new Orcamento(new BigDecimal("200"), 6);
         var orcamentoValor = new Orcamento(new BigDecimal("1000"), 1);
         var calculadora = new CalculadoraDeDescontos();
-
         System.out.println(calculadora.calcular(orcamentoItens));
         System.out.println(calculadora.calcular(orcamentoValor));
     }
