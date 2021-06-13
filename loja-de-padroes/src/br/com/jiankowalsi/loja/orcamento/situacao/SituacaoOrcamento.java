@@ -8,7 +8,7 @@ import br.com.jiankowalsi.loja.orcamento.Orcamento;
 public abstract class SituacaoOrcamento {
 
     public BigDecimal calcularValorDescontoExtra(Orcamento orcamento) {
-       return BigDecimal.ZERO;
+       return orcamento.getValor().multiply(BigDecimal.ZERO);
     }
 
     public void aprovar(Orcamento orcamento) {

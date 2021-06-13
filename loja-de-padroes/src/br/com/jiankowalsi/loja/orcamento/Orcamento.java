@@ -9,6 +9,11 @@ public class Orcamento {
 
     private BigDecimal valor;
     private int quantidadeItens;
+    @Override
+    public String toString() {
+        return "Orcamento [quantidadeItens=" + quantidadeItens + ", valor=" + valor + "]";
+    }
+
     private SituacaoOrcamento situacao;
 
     public Orcamento(BigDecimal valor, int quantidadeItens) {
