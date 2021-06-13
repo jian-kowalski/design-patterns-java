@@ -16,13 +16,13 @@ public class DescontoPorNumeroDeItens extends Desconto {
     private static final int NUMERO_MINIMO_PARA_DESCONTO = 5;
     private static final BigDecimal VALOR_DESCONTO = new BigDecimal("0.1");
 
-    public BigDecimal calcular(Orcamento orcamento) {
-        if (orcamento.getQuantidadeItens() > NUMERO_MINIMO_PARA_DESCONTO) {
-            return orcamento.getValor().multiply(VALOR_DESCONTO);
-        }
+    public BigDecimal efetuarCalculo(Orcamento orcamento) {
+        return orcamento.getValor().multiply(VALOR_DESCONTO);
+    }
 
-        return proximoDesconto.calcular(orcamento);
-
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return (orcamento.getQuantidadeItens() > NUMERO_MINIMO_PARA_DESCONTO);
     }
 
 }

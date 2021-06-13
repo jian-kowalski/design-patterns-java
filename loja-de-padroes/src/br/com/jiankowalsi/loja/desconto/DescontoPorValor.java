@@ -13,11 +13,12 @@ public class DescontoPorValor extends Desconto {
     private static final BigDecimal VALOR_DESCONTO = new BigDecimal("0.05");
     private static final BigDecimal VALOR_MINIMO_PARA_DESCONTO = new BigDecimal("500");
 
-    public BigDecimal calcular(Orcamento orcamento) {
+    public BigDecimal efetuarCalculo(Orcamento orcamento) {
+        return orcamento.getValor().multiply(VALOR_DESCONTO);
+    }
 
-        if (orcamento.getValor().compareTo(VALOR_MINIMO_PARA_DESCONTO) > 0) {
-            return orcamento.getValor().multiply(VALOR_DESCONTO);
-        }
-        return proximoDesconto.calcular(orcamento);
+    @Override
+    public boolean deveAplicar(Orcamento orcamento) {
+        return (orcamento.getValor().compareTo(VALOR_MINIMO_PARA_DESCONTO) > 0);
     }
 }
