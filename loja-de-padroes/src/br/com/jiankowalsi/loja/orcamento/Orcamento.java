@@ -4,11 +4,17 @@ import java.math.BigDecimal;
 
 public class Orcamento {
 
-    public Orcamento(BigDecimal valor) {
+    private BigDecimal valor;
+    private int quantidadeItens;
+
+    public Orcamento(BigDecimal valor, int quantidadeItens) {
         this.valor = valor;
+        this.quantidadeItens = quantidadeItens;
     }
 
-    private BigDecimal valor;
+    public int getQuantidadeItens() {
+        return quantidadeItens;
+    }
 
     public BigDecimal getValor() {
         return valor;
