@@ -56,6 +56,12 @@ public class Orcamento implements Orsavel {
     }
 
     public BigDecimal getValor() {
+        try {
+            Thread.sleep(2000);
+            
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return this.valor;
     }
 
@@ -68,8 +74,8 @@ public class Orcamento implements Orsavel {
     }
 
     public void adicionarItem(Orsavel orsavel){
+        this.valor = this.valor.add(orsavel.getValor());
         this.itens.add(orsavel);
-        this.valor.add(orsavel.getValor());
     }
 
 }
