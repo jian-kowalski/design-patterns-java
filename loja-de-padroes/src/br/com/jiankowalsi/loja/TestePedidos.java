@@ -1,3 +1,4 @@
+package br.com.jiankowalsi.loja;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
